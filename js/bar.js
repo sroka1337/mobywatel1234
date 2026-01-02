@@ -32,9 +32,18 @@ function sendTo(url, top, bottom){
     if (bottom){
         localStorage.setItem('bottom', bottom)
     }
-    location.href = `/${url}?` + params;
-}
-
+        // Map page names to HTML files
+        const pageMap = {
+            'documents': 'documents.html',
+            'services': 'services.html',
+            'qr': 'qr.html',
+            'more': 'more.html',
+            'card': 'card.html'
+        };
+        const pageUrl = pageMap[url] || url + '.html';
+        const paramsString = params.toString();
+        location.href = paramsString ? `${pageUrl}?${paramsString}` : pageUrl;
+    }
 var options = { year: 'numeric', month: '2-digit', day: '2-digit' };
 var optionsTime = { second: '2-digit', minute: '2-digit', hour: '2-digit' };
 

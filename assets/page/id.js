@@ -53,7 +53,7 @@ document.querySelector(".welcome").innerHTML = welcome;
 
 function toHome(){
     const paramsString = params.toString();
-    const url = paramsString ? `./documents.html?${paramsString}` : './documents.html';
+    location.href = paramsString ? `documents.html?${paramsString}` : 'documents.html';
     console.log('Redirecting to:', url);
     window.location.href = url;
 }

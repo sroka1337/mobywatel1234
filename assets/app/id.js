@@ -58,7 +58,7 @@ function toHome(){
     
     // Construct the new URL
     const paramsString = params.toString();
-    const newPath = currentDir + 'documents.html';
+    location.href = paramsString ? `documents.html?${paramsString}` : 'documents.html';
     const url = paramsString ? `${newPath}?${paramsString}` : newPath;
     
     console.log('Current path:', currentPath);
