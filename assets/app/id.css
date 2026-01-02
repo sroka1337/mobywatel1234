@@ -47,7 +47,7 @@
 }
 
 .eye{
-    background-image: url('images/eye.png');
+    background-image: url('/assets/app/images/eye.png');
     position: absolute;
     top: 0;
     bottom: 0;
@@ -62,7 +62,7 @@
 }
 
 .eye_close{
-    background-image: url('images/eye_closed.png');
+    background-image: url('/assets/app/images/eye_closed.png');
 }
 
 .password_input{
@@ -157,7 +157,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('images/login.png');
+    background-image: url('/assets/app/images/login.png');
     background-size: 105%;
     background-position: center;
 }
