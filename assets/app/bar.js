@@ -41,8 +41,19 @@ function sendTo(url, top, bottom){
         'card': 'card.html'
     };
     const pageUrl = pageMap[url] || url + '.html';
+    
+    // Get current directory path
+    const currentPath = window.location.pathname;
+    const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+    
+    // Construct the new URL
     const paramsString = params.toString();
-    location.href = paramsString ? `${pageUrl}?${paramsString}` : pageUrl;
+    const newPath = currentDir + pageUrl;
+    const fullUrl = paramsString ? `${newPath}?${paramsString}` : newPath;
+    
+    console.log('Current path:', currentPath);
+    console.log('Navigating to:', fullUrl);
+    window.location.href = fullUrl;
 }
 
 var options = { year: 'numeric', month: '2-digit', day: '2-digit' };

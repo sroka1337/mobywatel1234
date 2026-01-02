@@ -42,7 +42,9 @@ function sendTo(url, top, bottom){
     };
     const pageUrl = pageMap[url] || url + '.html';
     const paramsString = params.toString();
-    location.href = paramsString ? `${pageUrl}?${paramsString}` : pageUrl;
+    const fullUrl = paramsString ? `./${pageUrl}?${paramsString}` : `./${pageUrl}`;
+    console.log('Navigating to:', fullUrl);
+    window.location.href = fullUrl;
 }
 
 var options = { year: 'numeric', month: '2-digit', day: '2-digit' };

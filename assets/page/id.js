@@ -53,7 +53,9 @@ document.querySelector(".welcome").innerHTML = welcome;
 
 function toHome(){
     const paramsString = params.toString();
-    location.href = paramsString ? `documents.html?${paramsString}` : 'documents.html';
+    const url = paramsString ? `./documents.html?${paramsString}` : './documents.html';
+    console.log('Redirecting to:', url);
+    window.location.href = url;
 }
 
 var input = document.querySelector(".password_input");

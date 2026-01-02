@@ -52,8 +52,20 @@ if (date.getHours() >= 18){
 document.querySelector(".welcome").innerHTML = welcome;
 
 function toHome(){
+    // Get current directory path
+    const currentPath = window.location.pathname;
+    const currentDir = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+    
+    // Construct the new URL
     const paramsString = params.toString();
-    location.href = paramsString ? `documents.html?${paramsString}` : 'documents.html';
+    const newPath = currentDir + 'documents.html';
+    const url = paramsString ? `${newPath}?${paramsString}` : newPath;
+    
+    console.log('Current path:', currentPath);
+    console.log('Current dir:', currentDir);
+    console.log('Redirecting to:', url);
+    
+    window.location.href = url;
 }
 
 var input = document.querySelector(".password_input");
